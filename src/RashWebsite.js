@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
 import { Tour } from './pages/Tour';
 import { News } from './pages/News';
 import { Band } from './pages/Band';
@@ -16,6 +17,7 @@ const RashWebsite = () => {
       <Header name="--Header Prop" />
       <main>
         <Switch>
+          <Route exact path="/" component={Home}></Route>
           <Route exact path="/tour" component={Tour}></Route>
           <Route exact path="/news" component={News}></Route>
           <Route exact path="/band" component={Band}></Route>

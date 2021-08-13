@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import RashWebsite from './RashWebsite';
-import './css/base.css';
+import './scss/base.scss';
 
 ReactDOM.render(
   <BrowserRouter>

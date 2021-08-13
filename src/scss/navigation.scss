@@ -1,0 +1,23 @@
+header {
+  @apply text-lg font-extralight text-rash-yellow;
+  font-family: 'Martel Sans', sans-serif;
+
+  nav {
+    @apply flex;
+
+    ul {
+      @apply flex flex-row w-full gap-5 justify-evenly;
+
+      li {
+        @apply flex flex-row justify-center;
+      }
+
+      ul {
+        @apply flex flex-col items-start gap-1;
+      }
+    }
+    a {
+      @apply uppercase;
+    }
+  }
+}

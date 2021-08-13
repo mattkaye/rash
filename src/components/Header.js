@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../css/navigation.css';
+import logo from '../assets/images/rash.png';
+import '../scss/navigation.scss';
 
 export const Header = (props) => {
   return (
@@ -13,7 +14,7 @@ export const Header = (props) => {
           <li>
             <Link to="/news">News</Link>
           </li>
-          <li class="flex flex-col">
+          <li className="flex flex-col">
             <Link to="/band">Band</Link>
             <ul>
               <li>
@@ -28,11 +29,9 @@ export const Header = (props) => {
             </ul>
           </li>
           <li>
-            <img
-              src="https://www.rush.com/wp-content/themes/rush/assets/img/rush.svg"
-              class="w-48"
-              alt=""
-            />
+            <Link to="/">
+              <img src={logo} className="w-48" alt="" />
+            </Link>
           </li>
           <li>
             <Link to="/discography">Discography</Link>
