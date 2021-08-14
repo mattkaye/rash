@@ -3,7 +3,22 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-300;
+  @apply bg-black font-rash-serif;
+  color: #7f817f;
+
+  a {
+    @apply text-rash-yellow transition-colors hover:text-rash-red duration-300;
+
+    &.selected {
+      @apply text-rash-red;
+    }
+  }
+
+  p {
+    &.accent {
+      @apply text-white;
+    }
+  }
 
   main {
     @apply text-7xl;

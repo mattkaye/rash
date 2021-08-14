@@ -1,6 +1,5 @@
 header {
-  @apply text-lg font-extralight text-rash-yellow;
-  font-family: 'Martel Sans', sans-serif;
+  @apply text-rash-yellow font-rash-sans text-2xl z-10 relative;
 
   nav {
     @apply flex;

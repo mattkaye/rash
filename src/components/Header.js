@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/rash.png';
 import '../scss/navigation.scss';
 
@@ -9,35 +9,51 @@ export const Header = (props) => {
       <nav className="text-rash-yellow">
         <ul>
           <li>
-            <Link to="/tour">Tour</Link>
+            <NavLink activeClassName="selected" to="/tour">
+              Tour
+            </NavLink>
           </li>
           <li>
-            <Link to="/news">News</Link>
+            <NavLink activeClassName="selected" to="/news">
+              News
+            </NavLink>
           </li>
           <li className="flex flex-col">
-            <Link to="/band">Band</Link>
+            <NavLink activeClassName="selected" to="/band">
+              Band
+            </NavLink>
             <ul>
               <li>
-                <Link to="/band/geddy-lee">Geddy</Link>
+                <NavLink activeClassName="selected" to="/band/geddy-lee">
+                  Geddy
+                </NavLink>
               </li>
               <li>
-                <Link to="/band/alex-lifeson">Alex</Link>
+                <NavLink activeClassName="selected" to="/band/alex-lifeson">
+                  Alex
+                </NavLink>
               </li>
               <li>
-                <Link to="/band/neil-peart">Neil</Link>
+                <NavLink activeClassName="selected" to="/band/neil-peart">
+                  Neil
+                </NavLink>
               </li>
             </ul>
           </li>
           <li>
-            <Link to="/">
+            <NavLink activeClassName="selected" to="/">
               <img src={logo} className="w-48" alt="" />
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/discography">Discography</Link>
+            <NavLink activeClassName="selected" to="/discography">
+              Discography
+            </NavLink>
           </li>
           <li>
-            <Link to="/professors-word-scramble">Word Scramble</Link>
+            <NavLink activeClassName="selected" to="/professors-word-scramble">
+              Word Scramble
+            </NavLink>
           </li>
         </ul>
       </nav>
