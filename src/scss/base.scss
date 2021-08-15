@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black font-rash-serif;
+  @apply font-rash-serif bg-black;
   color: #7f817f;
+  min-height: 100rem;
+
+  .outer-wrapper {
+    @apply relative flex flex-col items-center h-screen place-content-between;
+  }
 
   a {
-    @apply text-rash-yellow transition-colors hover:text-rash-red duration-300;
+    @apply text-rash-yellow transition-colors hover:text-rash-red duration-500;
 
     &.selected {
       @apply text-rash-red;
@@ -22,5 +27,11 @@ body {
 
   main {
     @apply text-7xl;
+
+    .body-content {
+      background: #0a0b0a url(../assets/images/bg-main.jpg) center 100px
+        no-repeat;
+      background-size: 100% auto;
+    }
   }
 }

@@ -1,0 +1,27 @@
+.page-hero {
+  @apply fixed flex flex-col items-center text-center gap-12 max-w-screen-xl;
+
+  h1,
+  h2,
+  p {
+    @apply text-white uppercase;
+    text-shadow: 0px 2px 3px black;
+  }
+
+  h1 {
+    @apply font-rash-headline text-9xl tracking-wide;
+  }
+
+  h2 {
+    @apply font-sans text-xl tracking-widest;
+
+    &:after {
+      @apply w-64 h-1 bg-rash-red block mx-auto mt-12;
+      content: '';
+    }
+  }
+
+  p {
+    @apply text-3xl normal-case;
+  }
+}

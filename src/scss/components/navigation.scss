@@ -1,0 +1,33 @@
+header {
+  @apply text-rash-yellow font-rash-sans text-lg relative z-10;
+
+  nav {
+    @apply flex items-center justify-center w-full px-32 bg-black h-16 fixed left-0 transform translate-y-16;
+
+    li {
+      &.item-has-children {
+        @apply relative;
+
+        ul {
+          @apply absolute flex-col gap-2 top-6 -left-10 hidden;
+
+          &:hover {
+            ul {
+              @apply flex bg-black px-10 py-6 w-full;
+            }
+          }
+        }
+
+        &:hover {
+          ul {
+            @apply flex bg-black px-10 py-6;
+          }
+        }
+      }
+    }
+
+    a {
+      @apply uppercase block;
+    }
+  }
+}

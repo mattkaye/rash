@@ -13,8 +13,8 @@ import { ProfessorsWordScramble } from './pages/ProfessorsWordScramble';
 
 const RashWebsite = () => {
   return (
-    <div className="container mx-auto">
-      <Header name="--Header Prop" />
+    <div className="outer-wrapper">
+      <Header />
       <main>
         <Switch>
           <Route exact path="/" component={Home}></Route>
@@ -30,7 +30,7 @@ const RashWebsite = () => {
           ></Route>
         </Switch>
       </main>
-      <Footer name="--Footer Prop" />
+      <Footer />
     </div>
   );
 };
