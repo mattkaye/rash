@@ -8,14 +8,14 @@ import '../scss/pages/homepage.scss';
 export const Home = (props) => {
   useEffect(() => {
     document.title = 'Rash.com | React clone!';
-  });
+  }, ['Rash.com | React clone!']);
 
   return (
     <>
       {' '}
       <Wallpaper src={wallpaper} position="fixed" />
       {/* PW callout */}
-      <div className="relative flex flex-col items-center w-full -mt-72">
+      <div className="relative flex flex-col items-center w-full -mt-60">
         <PageHero />
       </div>
       {/* <div className="relative z-10 flex flex-col w-full h-16 bg-red-600">

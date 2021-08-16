@@ -13,7 +13,7 @@
   }
 
   h2 {
-    @apply font-sans text-xl tracking-widest;
+    @apply font-rash-sans text-xl tracking-widest;
 
     &:after {
       @apply w-64 h-1 bg-rash-red block mx-auto mt-12;

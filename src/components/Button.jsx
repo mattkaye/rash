@@ -3,7 +3,7 @@ import '../scss/components/button.scss';
 export const Button = (props) => {
   return (
     <a
-      class="button"
+      className="button"
       href={props.url}
       target="_blank"
       rel="noopener noreferrer"
