@@ -1,0 +1,28 @@
+.breakpoint-helper {
+  @apply fixed p-4 border-2 border-red-500 top-48 right-6;
+
+  &:after {
+    @apply bg-yellow-200 w-full absolute top-0 left-0 h-full flex justify-center items-center font-bold text-black;
+    content: 'XS';
+
+    @screen sm {
+      @apply bg-purple-300;
+      content: 'SM';
+    }
+
+    @screen md {
+      @apply bg-green-400;
+      content: 'MD';
+    }
+
+    @screen lg {
+      @apply bg-blue-300;
+      content: 'LG';
+    }
+
+    @screen xl {
+      @apply bg-pink-300;
+      content: 'XL';
+    }
+  }
+}

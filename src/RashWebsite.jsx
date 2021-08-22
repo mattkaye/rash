@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { BreakpointHelper } from './components/BreakpointHelper';
 import { Home } from './pages/Home';
 import { Tour } from './pages/Tour';
 import { News } from './pages/News';
@@ -15,7 +16,7 @@ const RashWebsite = () => {
   return (
     <div className="outer-wrapper">
       <Header />
-      <main>
+      {/* <main>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/tour" component={Tour}></Route>
@@ -30,7 +31,8 @@ const RashWebsite = () => {
           ></Route>
         </Switch>
       </main>
-      <Footer />
+      <Footer /> */}
+      <BreakpointHelper />
     </div>
   );
 };

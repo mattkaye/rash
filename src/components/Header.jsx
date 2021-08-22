@@ -43,11 +43,13 @@ export const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="flex justify-center px-20">
-          <NavLink activeClassName="selected" to="/">
-            <img src={logo} className="w-52" alt="" />
-          </NavLink>
-        </div>
+        <ul className="rash-logo">
+          <li>
+            <NavLink to="/">
+              <img src={logo} alt="" />
+            </NavLink>
+          </li>
+        </ul>
         <div className="w-1/3">
           <ul className="flex justify-between">
             <li>

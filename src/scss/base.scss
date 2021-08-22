@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: all 0.5s;
+}
+
 body {
-  @apply font-rash-serif bg-black;
+  @apply font-rash-serif bg-white;
   color: #7f817f;
   min-height: 100rem;
 
