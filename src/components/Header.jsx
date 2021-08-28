@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/rash.png';
 import '../scss/components/navigation.scss';
 
 export const Header = () => {
+  const [navIsActive, setNavActiveState] = useState(false);
+
+  function toggleNavState() {
+    setNavActiveState(!navIsActive ? true : false);
+  }
+
   return (
     <header>
+      <p>{}</p>
       <nav>
-        <div className="w-1/3">
-          <ul className="flex justify-between">
+        <button
+          className={
+            'hamburger hamburger--spring' + (navIsActive ? ' is-active' : '')
+          }
+          type="button"
+          aria-label="Menu"
+          aria-controls="navigation"
+          onClick={toggleNavState}
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+        <div className="w-full">
+          <ul className="xl:gap-32 md:gap-10">
             <li>
               <NavLink activeClassName="selected" to="/news">
                 News
@@ -50,8 +70,8 @@ export const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <div className="w-1/3">
-          <ul className="flex justify-between">
+        <div className="w-full">
+          <ul className="xl:gap-16 md:gap-6">
             <li>
               <NavLink activeClassName="selected" to="/discography">
                 Discography

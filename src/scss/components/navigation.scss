@@ -1,39 +1,37 @@
+@import '../../../node_modules/hamburgers/dist/hamburgers.min.css';
+
 header {
   @apply text-rash-yellow font-rash-sans text-lg relative z-10;
 
-  nav {
-    @apply flex items-center justify-center h-16 w-full bg-black fixed left-0 transform translate-y-16;
+  .rash-logo {
+    @apply flex justify-center;
 
+    img {
+      @apply min-w-full max-w-none sm:w-28 w-20 transform sm:translate-y-4 translate-y-1;
+    }
+  }
+
+  @screen md {
     .rash-logo {
-      @apply flex justify-center;
-
       img {
-        @apply min-w-full max-w-none w-32;
+        @apply w-32;
       }
     }
+  }
 
-    @screen lg {
-      @apply px-6;
-
-      .rash-logo {
-        @apply px-6;
-
-        img {
-          @apply w-32;
-        }
+  @screen xl {
+    .rash-logo {
+      img {
+        @apply w-52;
       }
     }
+  }
 
-    @screen xl {
-      @apply px-24;
+  nav {
+    @apply flex md:flex-row flex-col items-center justify-center h-16 w-full bg-black fixed left-0 transform md:translate-y-12;
 
-      .rash-logo {
-        @apply px-20;
-
-        img {
-          @apply w-52;
-        }
-      }
+    ul {
+      @apply flex flex-col md:flex-row items-center justify-center;
     }
 
     li {
@@ -43,7 +41,7 @@ header {
         @apply relative;
 
         ul {
-          @apply absolute flex-col gap-2 top-6 hidden bg-black pb-6 pt-10;
+          @apply absolute flex-col gap-2 top-6 bg-black pb-6 pt-10 items-start opacity-0;
 
           @screen md {
             @apply px-0 left-0;
@@ -62,14 +60,38 @@ header {
 
         &:hover {
           ul {
-            @apply flex;
+            @apply opacity-100;
           }
         }
       }
     }
 
     a {
-      @apply uppercase block whitespace-nowrap;
+      @apply uppercase block whitespace-nowrap text-sm;
+
+      @screen lg {
+        @apply text-base;
+      }
+    }
+
+    .hamburger {
+      @apply absolute right-0 z-20 flex flex-col justify-center md:hidden;
+    }
+
+    .hamburger,
+    .hamburger.is-active {
+      .hamburger-inner {
+        @apply bg-rash-yellow;
+
+        &:before,
+        &:after {
+          @apply bg-rash-yellow;
+        }
+      }
+
+      &:hover {
+        @apply opacity-100;
+      }
     }
   }
 }

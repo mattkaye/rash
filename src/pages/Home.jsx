@@ -18,9 +18,9 @@ export const Home = (props) => {
       <div className="relative flex flex-col items-center w-full -mt-60">
         <PageHero />
       </div>
-      {/* <div className="relative z-10 flex flex-col w-full h-16 bg-red-600">
+      <div className="relative z-10 flex flex-col w-full h-16 bg-red-600">
         Main Stuff here
-      </div> */}
+      </div>
     </>
   );
 };
