@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../assets/images/rash.png';
 import arrow from '../assets/icons/nav-arrow.svg';
 import '../scss/components/navigation.scss';
@@ -8,16 +8,35 @@ export const Header = () => {
   const [navIsActive, setNavActiveState] = useState(false);
   const [subNavIsActive, setSubNavActiveState] = useState(false);
 
+  useEffect(() => {
+    mediaMatchMastehead();
+  }, []);
+
+  useEffect(() => {
+    setNavActiveState(false);
+  }, [useLocation()]);
+
   function toggleNavState(e) {
-    if (e.target.dataset.logo) {
-      setNavActiveState(false);
-    } else {
-      setNavActiveState(!navIsActive ? true : false);
-    }
+    setNavActiveState(!navIsActive ? true : false);
   }
 
   function toggleSubNavigation(e) {
     setSubNavActiveState(!subNavIsActive ? true : false);
+  }
+
+  // Closes mobile navigation when window expands.
+  function mediaMatchMastehead() {
+    const mediaQuery = window.matchMedia('(min-width: 760px)');
+    const masthead = document.querySelector('header');
+
+    function handleTabletChange(e) {
+      if (e.matches) {
+        console.log('desktop');
+        setNavActiveState(false);
+      }
+    }
+    mediaQuery.addEventListener('change', handleTabletChange);
+    handleTabletChange(mediaQuery);
   }
 
   return (
@@ -39,12 +58,12 @@ export const Header = () => {
         <div className={'nav-wrapper ' + (navIsActive ? ' is-active' : '')}>
           <div className="w-full nav-section">
             <ul className="lg:gap-16 md:gap-0">
-              <li onClick={toggleNavState}>
+              <li>
                 <NavLink activeClassName="selected" to="/news">
                   News
                 </NavLink>
               </li>
-              <li onClick={toggleNavState}>
+              <li>
                 <NavLink activeClassName="selected" to="/discography">
                   Discography
                 </NavLink>
@@ -82,23 +101,18 @@ export const Header = () => {
           <ul className="rash-logo">
             <li>
               <NavLink to="/">
-                <img
-                  src={logo}
-                  alt="Rash Logo"
-                  data-logo
-                  onClick={toggleNavState}
-                />
+                <img src={logo} alt="Rash Logo" />
               </NavLink>
             </li>
           </ul>
           <div className="w-full nav-section">
             <ul className="lg:gap-16 md:gap-0">
-              <li onClick={toggleNavState}>
+              <li>
                 <NavLink activeClassName="selected" to="/tour">
                   Tour
                 </NavLink>
               </li>
-              <li onClick={toggleNavState}>
+              <li>
                 <a
                   href="http://www.rushbackstage.com/"
                   target="_blank"
@@ -107,7 +121,7 @@ export const Header = () => {
                   Shop
                 </a>
               </li>
-              <li onClick={toggleNavState}>
+              <li>
                 <NavLink
                   activeClassName="selected"
                   to="/professors-word-scramble"
