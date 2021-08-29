@@ -10,10 +10,7 @@ export const PageHero = (props) => {
         Permanent Waves 40th Anniversary and exclusive Permanent Waves
         merchandise items are available now at Rush Backstage Club.
       </p>
-      <Button
-        text="order now"
-        url="https://www.rushbackstage.com/dept/permanent-waves-40th-anniversary?cp=102112_107415"
-      />
+      <Button text="order now" url="https://www.rushbackstage.com/" />
     </div>
   );
 };

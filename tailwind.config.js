@@ -13,6 +13,7 @@ module.exports = {
         'rash-yellow': '#d4b11c',
         'rash-red': '#F20F2B',
         'rash-grey': '#292a29',
+        'rash-dark-grey': '#202120',
       },
     },
   },

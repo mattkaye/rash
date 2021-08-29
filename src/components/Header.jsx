@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/rash.png';
+import arrow from '../assets/icons/nav-arrow.svg';
 import '../scss/components/navigation.scss';
 
 export const Header = () => {
   const [navIsActive, setNavActiveState] = useState(false);
+  const [subNavIsActive, setSubNavActiveState] = useState(false);
 
   function toggleNavState(e) {
     if (e.target.dataset.logo) {
@@ -12,6 +14,10 @@ export const Header = () => {
     } else {
       setNavActiveState(!navIsActive ? true : false);
     }
+  }
+
+  function toggleSubNavigation(e) {
+    setSubNavActiveState(!subNavIsActive ? true : false);
   }
 
   return (
@@ -32,23 +38,28 @@ export const Header = () => {
         </button>
         <div className={'nav-wrapper ' + (navIsActive ? ' is-active' : '')}>
           <div className="w-full nav-section">
-            <ul className="lg:gap-16 md:gap-0" onClick={toggleNavState}>
-              <li>
+            <ul className="lg:gap-16 md:gap-0">
+              <li onClick={toggleNavState}>
                 <NavLink activeClassName="selected" to="/news">
                   News
                 </NavLink>
               </li>
-              <li>
+              <li onClick={toggleNavState}>
                 <NavLink activeClassName="selected" to="/discography">
                   Discography
                 </NavLink>
               </li>
 
               <li className="item-has-children">
+                <img
+                  src={arrow}
+                  className={'arrow' + (subNavIsActive ? ' is-active' : '')}
+                  onClick={toggleSubNavigation}
+                />
                 <NavLink activeClassName="selected" to="/band">
                   Band
                 </NavLink>
-                <ul>
+                <ul className={subNavIsActive ? 'is-active' : ''}>
                   <li>
                     <NavLink activeClassName="selected" to="/band/geddy-lee">
                       Geddy
@@ -81,13 +92,13 @@ export const Header = () => {
             </li>
           </ul>
           <div className="w-full nav-section">
-            <ul className="lg:gap-16 md:gap-0" onClick={toggleNavState}>
-              <li>
+            <ul className="lg:gap-16 md:gap-0">
+              <li onClick={toggleNavState}>
                 <NavLink activeClassName="selected" to="/tour">
                   Tour
                 </NavLink>
               </li>
-              <li>
+              <li onClick={toggleNavState}>
                 <a
                   href="http://www.rushbackstage.com/"
                   target="_blank"
@@ -96,7 +107,7 @@ export const Header = () => {
                   Shop
                 </a>
               </li>
-              <li>
+              <li onClick={toggleNavState}>
                 <NavLink
                   activeClassName="selected"
                   to="/professors-word-scramble"

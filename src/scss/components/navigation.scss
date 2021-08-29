@@ -39,16 +39,20 @@ header {
     }
 
     li {
-      @apply px-3 py-4 md:py-0;
+      @apply md:px-3 py-4 md:py-0;
 
       &.item-has-children {
         @apply relative;
 
         ul {
-          @apply absolute flex-col gap-2 top-6 bg-black pb-6 pt-10 items-start opacity-0;
+          @apply hidden relative flex-col bg-rash-dark-grey gap-2 top-4 items-start border-t border-rash-yellow border-opacity-50;
+
+          &.is-active {
+            @apply flex;
+          }
 
           @screen md {
-            @apply px-0 left-0;
+            @apply flex px-0 left-0 bg-black absolute opacity-0 pt-10 pb-6 border-none top-6;
           }
 
           @screen lg {
@@ -59,6 +63,14 @@ header {
             ul {
               @apply flex bg-black px-10 py-6 w-full;
             }
+          }
+
+          li:last-of-type {
+            @apply border-none;
+          }
+
+          a {
+            @apply text-xl;
           }
         }
 
@@ -71,7 +83,7 @@ header {
     }
 
     a {
-      @apply uppercase block whitespace-nowrap text-xl md:text-base xl:text-lg;
+      @apply uppercase block whitespace-nowrap text-2xl md:text-base xl:text-lg;
     }
 
     .hamburger {
@@ -98,10 +110,10 @@ header {
       @apply flex flex-col items-center w-full md:flex-row;
 
       &.is-active {
-        @apply bg-rash-grey flex w-full flex-col items-center absolute top-16 h-screen pt-4;
+        @apply bg-rash-grey flex w-full flex-col items-center absolute top-16 h-screen pt-1;
 
         li {
-          @apply border-b border-rash-yellow w-full text-center;
+          @apply border-b border-rash-yellow border-opacity-50 w-full text-center;
         }
 
         .rash-logo {
@@ -115,6 +127,14 @@ header {
         .nav-section {
           @apply block;
         }
+      }
+    }
+
+    .arrow {
+      @apply absolute w-6 h-6 right-6 md:hidden z-20;
+
+      &.is-active {
+        @apply transform rotate-180;
       }
     }
   }
