@@ -29,14 +29,13 @@ export const Header = () => {
     const mediaQuery = window.matchMedia('(min-width: 760px)');
     const masthead = document.querySelector('header');
 
-    function handleTabletChange(e) {
+    function handleViewportChange(e) {
       if (e.matches) {
-        console.log('desktop');
         setNavActiveState(false);
       }
     }
-    mediaQuery.addEventListener('change', handleTabletChange);
-    handleTabletChange(mediaQuery);
+    mediaQuery.addEventListener('change', handleViewportChange);
+    handleViewportChange(mediaQuery);
   }
 
   return (
