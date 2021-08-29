@@ -4,10 +4,10 @@ header {
   @apply text-rash-yellow font-rash-sans text-lg relative z-10;
 
   .rash-logo {
-    @apply flex justify-center;
+    @apply flex justify-center absolute md:relative order-first md:order-none -top-14 md:top-0;
 
     img {
-      @apply min-w-full max-w-none sm:w-28 w-20 transform sm:translate-y-4 translate-y-1;
+      @apply min-w-full max-w-none sm:w-28 w-20 transform translate-y-12 md:translate-y-0;
     }
   }
 
@@ -30,12 +30,16 @@ header {
   nav {
     @apply flex md:flex-row flex-col items-center justify-center h-16 w-full bg-black fixed left-0 transform md:translate-y-12;
 
+    .nav-section {
+      @apply hidden md:block;
+    }
+
     ul {
       @apply flex flex-col md:flex-row items-center justify-center;
     }
 
     li {
-      @apply px-3;
+      @apply px-3 py-4 md:py-0;
 
       &.item-has-children {
         @apply relative;
@@ -67,11 +71,7 @@ header {
     }
 
     a {
-      @apply uppercase block whitespace-nowrap text-sm;
-
-      @screen lg {
-        @apply text-base;
-      }
+      @apply uppercase block whitespace-nowrap text-xl md:text-base xl:text-lg;
     }
 
     .hamburger {
@@ -91,6 +91,30 @@ header {
 
       &:hover {
         @apply opacity-100;
+      }
+    }
+
+    .nav-wrapper {
+      @apply flex flex-col items-center w-full md:flex-row;
+
+      &.is-active {
+        @apply bg-rash-grey flex w-full flex-col items-center absolute top-16 h-screen pt-4;
+
+        li {
+          @apply border-b border-rash-yellow w-full text-center;
+        }
+
+        .rash-logo {
+          top: -7.5rem;
+
+          li {
+            @apply border-none;
+          }
+        }
+
+        .nav-section {
+          @apply block;
+        }
       }
     }
   }
