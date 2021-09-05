@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { throttle } from 'lodash';
 import logo from '../assets/images/rash.png';
 import arrow from '../assets/icons/nav-arrow.svg';
 import '../scss/components/navigation.scss';
@@ -8,8 +9,10 @@ export const Header = () => {
   const [navIsActive, setNavActiveState] = useState(false);
   const [subNavIsActive, setSubNavActiveState] = useState(false);
 
+  // These only run once on mount
   useEffect(() => {
     mediaMatchMastehead();
+    handleNavOnScroll();
   }, []);
 
   useEffect(() => {
@@ -22,6 +25,22 @@ export const Header = () => {
 
   function toggleSubNavigation(e) {
     setSubNavActiveState(!subNavIsActive ? true : false);
+  }
+
+  function handleNavOnScroll() {
+    const nav = document.querySelector('nav');
+    let navHeight = nav.offsetHeight;
+
+    window.onscroll = throttle(() => {
+      let scrollpos = window.scrollY;
+      navHeight = nav.offsetHeight;
+
+      if (scrollpos >= navHeight) {
+        nav.classList.add('condensed');
+      } else {
+        nav.classList.remove('condensed');
+      }
+    }, 100);
   }
 
   // Closes mobile navigation when window expands.

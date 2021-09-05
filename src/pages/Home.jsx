@@ -12,14 +12,44 @@ export const Home = (props) => {
 
   return (
     <>
-      {' '}
-      <Wallpaper src={wallpaper} position="fixed" />
+      {/* <Wallpaper src={wallpaper} position="fixed" /> */}
       {/* PW callout */}
-      <div className="relative flex flex-col items-center w-full -mt-60">
+      {/* <div className="relative flex flex-col items-center w-full -mt-60">
         <PageHero />
-      </div>
-      <div className="relative z-10 flex flex-col w-full h-16 bg-red-600">
-        Main Stuff here
+      </div> */}
+      <div className="relative z-10 flex flex-col w-full bg-red-200">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+        provident perspiciatis dolorum vitae repellat natus dolore aliquid!
+        Maxime officia, dolores corrupti sit voluptatem consequatur repudiandae,
+        quasi fugit minima, ducimus officiis. Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Nostrum provident perspiciatis dolorum
+        vitae repellat natus dolore aliquid! Maxime officia, dolores corrupti
+        sit voluptatem consequatur repudiandae, quasi fugit minima, ducimus
+        officiis. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Nostrum provident perspiciatis dolorum vitae repellat natus dolore
+        aliquid! Maxime officia, dolores corrupti sit voluptatem consequatur
+        repudiandae, quasi fugit minima, ducimus officiis.Lorem ipsum dolor sit
+        amet consectetur, adipisicing elit. Nostrum provident perspiciatis
+        dolorum vitae repellat natus dolore aliquid! Maxime officia, dolores
+        corrupti sit voluptatem consequatur repudiandae, quasi fugit minima,
+        ducimus officiis. Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit. Nostrum provident perspiciatis dolorum vitae repellat natus dolore
+        aliquid! Maxime officia, dolores corrupti sit voluptatem consequatur
+        repudiandae, quasi fugit minima, ducimus officiis. Lorem ipsum dolor sit
+        amet consectetur, adipisicing elit. Nostrum provident perspiciatis
+        dolorum vitae repellat natus dolore aliquid! Maxime officia, dolores
+        corrupti sit voluptatem consequatur repudiandae, quasi fugit minima,
+        ducimus officiis.Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit. Nostrum provident perspiciatis dolorum vitae repellat natus dolore
+        aliquid! Maxime officia, dolores corrupti sit voluptatem consequatur
+        repudiandae, quasi fugit minima, ducimus officiis. Lorem ipsum dolor sit
+        amet consectetur, adipisicing elit. Nostrum provident perspiciatis
+        dolorum vitae repellat natus dolore aliquid! Maxime officia, dolores
+        corrupti sit voluptatem consequatur repudiandae, quasi fugit minima,
+        ducimus officiis. Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit. Nostrum provident perspiciatis dolorum vitae repellat natus dolore
+        aliquid! Maxime officia, dolores corrupti sit voluptatem consequatur
+        repudiandae, quasi fugit minima, ducimus officiis.
       </div>
     </>
   );

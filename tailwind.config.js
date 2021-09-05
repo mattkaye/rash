@@ -9,7 +9,7 @@ module.exports = {
         'rash-headline': ['Anton', 'sans-serif'],
       },
       colors: {
-        black: '#0a0b0a',
+        'rash-black': '#0a0b0a',
         'rash-yellow': '#d4b11c',
         'rash-red': '#F20F2B',
         'rash-grey': '#292a29',

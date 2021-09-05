@@ -22,13 +22,13 @@ header {
   @screen xl {
     .rash-logo {
       img {
-        @apply w-52;
+        @apply w-40;
       }
     }
   }
 
   nav {
-    @apply flex md:flex-row flex-col items-center justify-center h-16 w-full bg-black fixed left-0 transform md:translate-y-12;
+    @apply flex md:flex-row flex-col items-center justify-center h-16 md:h-12 w-full bg-rash-dark-grey fixed left-0 transform md:translate-y-12;
 
     .nav-section {
       @apply hidden md:block;
@@ -52,7 +52,7 @@ header {
           }
 
           @screen md {
-            @apply flex px-0 left-0 bg-black absolute opacity-0 pt-10 pb-6 border-none top-6;
+            @apply flex px-0 left-0 bg-rash-dark-grey absolute opacity-0 pt-10 pb-6 border-none top-6;
           }
 
           @screen lg {
@@ -61,7 +61,7 @@ header {
 
           &:hover {
             ul {
-              @apply flex bg-black px-10 py-6 w-full;
+              @apply flex bg-rash-dark-grey px-10 py-6 w-full;
             }
           }
 
@@ -135,6 +135,18 @@ header {
 
       &.is-active {
         @apply transform rotate-180;
+      }
+    }
+
+    &.condensed {
+      @screen md {
+        @apply translate-y-0;
+
+        .rash-logo {
+          img {
+            @apply scale-75 translate-y-4;
+          }
+        }
       }
     }
   }

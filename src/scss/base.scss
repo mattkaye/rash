@@ -8,16 +8,15 @@
 }
 
 body {
-  @apply font-rash-serif bg-white;
+  @apply font-rash-serif bg-rash-black;
   color: #7f817f;
-  min-height: 100rem;
 
   .outer-wrapper {
-    @apply relative flex flex-col items-center h-screen place-content-between;
+    @apply container mx-auto w-full flex flex-col h-screen justify-between items-center gap-6;
   }
 
   a {
-    @apply text-rash-yellow transition-colors hover:text-rash-red duration-500;
+    @apply text-rash-yellow hover:text-rash-red;
 
     &.selected {
       @apply text-rash-red;
@@ -31,8 +30,6 @@ body {
   }
 
   main {
-    @apply text-7xl;
-
     .body-content {
       background: #0a0b0a url(../assets/images/bg-main.jpg) center 100px
         no-repeat;
